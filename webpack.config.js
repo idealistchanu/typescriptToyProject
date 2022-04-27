@@ -23,6 +23,15 @@ module.exports = {
                     loader: "ts-loader",
                 },
             },
+            {
+                test: /\.ts$/,
+                use: [{
+                    loader: 'ts-loader',
+                    options: {
+                        configFile: path.join(__dirname, '/config/tsconfig.mobile.json'), // Error : configFile: './config/tsconfig.mobile.json' 
+                    }
+                }]
+            },
         ],
     },
     resolve: {
